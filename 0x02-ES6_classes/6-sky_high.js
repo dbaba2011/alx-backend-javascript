@@ -1,20 +1,20 @@
-import Building from './5-building.js';
+import Building from './5-building';
 
-class SkyHighBuilding extends Building {
+export default class SkyHighBuilding extends Building {
   constructor(sqft, floors) {
-    super(sqft); // Call the parent class constructor
+    super(sqft);
     this._floors = floors;
   }
 
-  // Getter for floors
   get floors() {
     return this._floors;
   }
 
-  // Override the evacuationWarningMessage method
+  set floors(value) {
+    this._floors = value;
+  }
+
   evacuationWarningMessage() {
-    return `Evacuate slowly the ${this._floors} floors`;
+    return `Evacuate slowly the ${this.floors} floors`;
   }
 }
-
-export default SkyHighBuilding;
